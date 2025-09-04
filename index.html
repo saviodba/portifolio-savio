@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sávio Pereira - Desenvolvedor Full Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .tech-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .section-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">SP</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">Início</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">Sobre</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">Habilidades</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projetos</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contato</a>
+                </div>
+                <button id="menu-toggle" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-40 transform -translate-x-full transition-transform md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="text-2xl text-gray-600 hover:text-blue-600">Início</a>
+            <a href="#about" class="text-2xl text-gray-600 hover:text-blue-600">Sobre</a>
+            <a href="#skills" class="text-2xl text-gray-600 hover:text-blue-600">Habilidades</a>
+            <a href="#projects" class="text-2xl text-gray-600 hover:text-blue-600">Projetos</a>
+            <a href="#contact" class="text-2xl text-gray-600 hover:text-blue-600">Contato</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="floating mb-8">
+                <div class="w-32 h-32 mx-auto bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-code text-4xl"></i>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Sávio Pereira</h1>
+            <p class="text-xl md:text-2xl mb-8 text-white/90">Desenvolvedor Full Stack</p>
+            <p class="text-lg mb-12 max-w-2xl mx-auto text-white/80">
+                Especialista em criar soluções completas e robustas, do frontend ao backend, 
+                com foco em performance e experiência do usuário.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                    Ver Projetos
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                    Entre em Contato
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="section-reveal text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Sobre Mim</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="section-reveal grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Desenvolvedor Full Stack Apaixonado</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Com anos de experiência no desenvolvimento de aplicações completas, 
+                        trabalho com tecnologias modernas para criar soluções eficientes e escaláveis. 
+                        Minha paixão está em transformar ideias em realidade através do código.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Especializado em JavaScript, C# e Delphi, com expertise em Node.js e .NET, 
+                        sempre busco as melhores práticas e tecnologias mais atuais do mercado.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-check-circle mr-2"></i>Desenvolvimento Ágil
+                        </span>
+                        <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-check-circle mr-2"></i>Clean Code
+                        </span>
+                        <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-check-circle mr-2"></i>Arquitetura de Software
+                        </span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-purple-600 w-80 h-80 mx-auto rounded-2xl flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <i class="fas fa-laptop-code text-6xl mb-4"></i>
+                            <p class="text-xl font-semibold">Sempre Codando</p>
+                            <p class="text-blue-100">Criando o futuro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture & Best Practices -->
+            <div class="section-reveal mt-16">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Arquitetura & Boas Práticas</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-layer-group text-2xl text-indigo-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Clean Architecture</h4>
+                            <p class="text-gray-600 text-sm mb-4">Arquitetura limpa com separação clara de responsabilidades</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Domain</span>
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Use Cases</span>
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Infrastructure</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-code text-2xl text-emerald-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Clean Code</h4>
+                            <p class="text-gray-600 text-sm mb-4">Código limpo, legível e de fácil manutenção</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">SOLID</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">DRY</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">KISS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-puzzle-piece text-2xl text-amber-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Design Patterns</h4>
+                            <p class="text-gray-600 text-sm mb-4">Padrões de projeto para soluções elegantes</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Repository</span>
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Factory</span>
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Observer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="section-reveal text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Habilidades Técnicas</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <!-- Languages -->
+            <div class="section-reveal mb-12">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Linguagens de Programação</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fab fa-js-square text-2xl text-yellow-600"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">JavaScript</h4>
+                            <p class="text-gray-600 text-sm mb-4">Linguagem versátil para frontend e backend</p>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-yellow-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fab fa-microsoft text-2xl text-purple-600"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">C#</h4>
+                            <p class="text-gray-600 text-sm mb-4">Desenvolvimento robusto com .NET</p>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-code text-2xl text-red-600"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Delphi</h4>
+                            <p class="text-gray-600 text-sm mb-4">Aplicações desktop de alta performance</p>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-red-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="section-reveal">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Tecnologias & Frameworks</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fab fa-node-js text-2xl text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Node.js</h4>
+                                <p class="text-gray-600 text-xs">Runtime JavaScript</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="skill-bar bg-green-500 h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">APIs RESTful, Express.js</p>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fab fa-microsoft text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">.NET</h4>
+                                <p class="text-gray-600 text-xs">Framework Microsoft</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">ASP.NET Core, Entity Framework</p>
+                    </div>
+
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fab fa-docker text-2xl text-cyan-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Docker</h4>
+                                <p class="text-gray-600 text-xs">Containerização</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="skill-bar bg-cyan-500 h-2 rounded-full" style="width: 82%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">Containers, Docker Compose</p>
+                    </div>
+
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-plug text-2xl text-orange-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Socket.IO</h4>
+                                <p class="text-gray-600 text-xs">Real-time</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="skill-bar bg-orange-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">WebSockets, Chat, Notificações</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture & Best Practices -->
+            <div class="section-reveal mt-16">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Arquitetura & Boas Práticas</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-layer-group text-2xl text-indigo-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Clean Architecture</h4>
+                            <p class="text-gray-600 text-sm mb-4">Arquitetura limpa com separação clara de responsabilidades</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Domain</span>
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Use Cases</span>
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Infrastructure</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-code text-2xl text-emerald-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Clean Code</h4>
+                            <p class="text-gray-600 text-sm mb-4">Código limpo, legível e de fácil manutenção</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">SOLID</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">DRY</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">KISS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-puzzle-piece text-2xl text-amber-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Design Patterns</h4>
+                            <p class="text-gray-600 text-sm mb-4">Padrões de projeto para soluções elegantes</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Repository</span>
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Factory</span>
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Observer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="section-reveal text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Projetos em Destaque</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="section-reveal grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">Plataforma completa de e-commerce desenvolvida com Node.js e React</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Node.js</span>
+                        </div>
+                        <button class="text-blue-600 hover:text-blue-800 font-medium">Ver Projeto →</button>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Sistema de Gestão</h3>
+                        <p class="text-gray-600 mb-4">ERP completo desenvolvido em C# com .NET Core</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">C#</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">.NET</span>
+                        </div>
+                        <button class="text-blue-600 hover:text-blue-800 font-medium">Ver Projeto →</button>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <i class="fas fa-desktop text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Aplicação Desktop</h3>
+                        <p class="text-gray-600 mb-4">Sistema de controle financeiro desenvolvido em Delphi</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Delphi</span>
+                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Desktop</span>
+                        </div>
+                        <button class="text-blue-600 hover:text-blue-800 font-medium">Ver Projeto →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture & Best Practices -->
+            <div class="section-reveal mt-16">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Arquitetura & Boas Práticas</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-layer-group text-2xl text-indigo-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Clean Architecture</h4>
+                            <p class="text-gray-600 text-sm mb-4">Arquitetura limpa com separação clara de responsabilidades</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Domain</span>
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Use Cases</span>
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Infrastructure</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-code text-2xl text-emerald-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Clean Code</h4>
+                            <p class="text-gray-600 text-sm mb-4">Código limpo, legível e de fácil manutenção</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">SOLID</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">DRY</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">KISS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-puzzle-piece text-2xl text-amber-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Design Patterns</h4>
+                            <p class="text-gray-600 text-sm mb-4">Padrões de projeto para soluções elegantes</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Repository</span>
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Factory</span>
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Observer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="section-reveal text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Vamos Trabalhar Juntos?</h2>
+                <p class="text-xl text-white/90">Entre em contato para discutir seu próximo projeto</p>
+            </div>
+            
+            <div class="section-reveal grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Informações de Contato</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope w-6 text-white/80 mr-4"></i>
+                            <span>savio.pereira@email.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone w-6 text-white/80 mr-4"></i>
+                            <span>+55 (11) 99999-9999</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt w-6 text-white/80 mr-4"></i>
+                            <span>São Paulo, SP - Brasil</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Envie uma Mensagem</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Seu Nome" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:border-white/50">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Seu Email" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:border-white/50">
+                        </div>
+                        <div>
+                            <textarea rows="4" placeholder="Sua Mensagem" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:border-white/50 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-blue-600 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Architecture & Best Practices -->
+            <div class="section-reveal mt-16">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Arquitetura & Boas Práticas</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-layer-group text-2xl text-indigo-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Clean Architecture</h4>
+                            <p class="text-gray-600 text-sm mb-4">Arquitetura limpa com separação clara de responsabilidades</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Domain</span>
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Use Cases</span>
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs">Infrastructure</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-code text-2xl text-emerald-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Clean Code</h4>
+                            <p class="text-gray-600 text-sm mb-4">Código limpo, legível e de fácil manutenção</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">SOLID</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">DRY</span>
+                                <span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded text-xs">KISS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-puzzle-piece text-2xl text-amber-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Design Patterns</h4>
+                            <p class="text-gray-600 text-sm mb-4">Padrões de projeto para soluções elegantes</p>
+                            <div class="flex flex-wrap gap-1 justify-center">
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Repository</span>
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Factory</span>
+                                <span class="bg-amber-50 text-amber-700 px-2 py-1 rounded text-xs">Observer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>&copy; 2024 Sávio Pereira. Todos os direitos reservados.</p>
+            <p class="text-gray-400 mt-2">Desenvolvido com ❤️ e muito código</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full');
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections with reveal animation
+        document.querySelectorAll('.section-reveal').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Animate skill bars when they come into view
+        const skillBars = document.querySelectorAll('.skill-bar');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 200);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => {
+            skillObserver.observe(bar);
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = contactForm.querySelector('input[type="text"]').value;
+            const email = contactForm.querySelector('input[type="email"]').value;
+            const message = contactForm.querySelector('textarea').value;
+            
+            if (name && email && message) {
+                // Show success message
+                alert('Mensagem enviada com sucesso! Sávio entrará em contato em breve.');
+                contactForm.reset();
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+
+        // Project buttons functionality
+        const projectButtons = document.querySelectorAll('button:contains("Ver Projeto")');
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Ver Projeto')) {
+                button.addEventListener('click', () => {
+                    alert('Este é um projeto de demonstração. Em um portfólio real, isso levaria aos detalhes do projeto ou repositório no GitHub.');
+                });
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'979e0c2e66614bbe',t:'MTc1Njk5NDc4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
